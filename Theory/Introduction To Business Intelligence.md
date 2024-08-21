@@ -103,4 +103,64 @@ When the data are ready then are uploaded to the data warehouse and this may be 
 - Refresh: where we rewrite the entire db 
 - Update: only the changes that were made are applied to the data warehouse, all the others remain the same.
 
+# Data Warehouses Architecture
+
+## Main Requirements
+
+The main requirements for a warehouse architecture are:
+- Separation between the transactional processing and the analytical
+- Scalability, in order to support an increasing number of users 
+- Extensibile in the mean that should be capable of manage new application
+- Security for monitoring the strategic data that are stored
+- Administrability 
+
+## Type of Architecture
+
+### Single-layer Architecture
+Only one source layer, the Data warehouse is represented by the middleware abstraction of the db.
+
+![Alt text](/Theory/Images/SingleLayer.png)
+
+## Two-layer Architecture
+More than one source layer, usually internal and external. In this case in particular, the data are stored in data mart, which is the main difference with the single-layer architecture.
+
+![Alt text](/Theory/Images/DoubleLayer.png)
+
+
+## Three-layer Architecture
+Here we have the reconciled layer, which is in charge of the materialization of the data obtained using the external data.
+
+![Alt text](/Theory/Images/ThreeLayer.png)
+
+# Conceptual Modeling
+The Dimensional Fact Model is a conceptual model created to support the desing and project of the data mart. The main goal of this model are:
+- Support the conceptual design
+- Create an environment where the user can interact in an easy way with the DWH
+- Favor the communication between the users and the designers
+- Build a common platform for the logic design
+- Give a clear and effective relation of the design of the DWH
+
+The DFM has the following concepts at the base:
+- Facts: Relevant concepts
+- Measure: Numerical properties related to the facts 
+- Dimensions: It is a property of a fact in a predetermined realm to describe a coordination point for the analysis.
+- Dimensional Attributes: Dimensions and other possible attributes
+- Hierarchy: The relation between father-son related attributes
+
+The facts can be splitted into **Primary Events** and **Secondary Events**.
+The primary events are particular occorrence of facts where each of the dimensions have a values assigned, are summaries of primary events wich sum up the result of more primary events.
+
+### Additivity
+A measure is called *additive* along with a dimension when you can use the SUM operator to aggregate its values along the dimension hierarchy.
+The additivity is the firt charateristic to execute the **Aggregation Operator Classification**.
+- Distributive: where we can calculate the global aggregation from the partial
+- Algebraic: requiring the usage of additional information in the form of a finite
+number of support measures to correctly calculate aggregates from partial
+aggregates
+- Holistic: calculating aggregates from partial aggregates only via an infinite number
+of support measures
+
+TO COMPLETE
+
+
 
