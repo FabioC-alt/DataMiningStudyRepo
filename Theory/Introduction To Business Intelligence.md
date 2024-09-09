@@ -70,6 +70,7 @@ In this case the idea is to reduce the data aggregations and have a new level of
 
 ### Slide and dice
 Here we reduce the number of dimension of the information cube.
+
 ![Alt text](/Theory/Images/Slice%20and%20dice.png)
 
 ### Pivot
@@ -160,7 +161,7 @@ aggregates
 - Holistic: calculating aggregates from partial aggregates only via an infinite number
 of support measures
 
-TO COMPLETE
+
 
 
 
