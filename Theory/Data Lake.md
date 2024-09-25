@@ -80,3 +80,80 @@ The main requirements for this approach are:
 - **Business Analyst**:use a self-service BI and ad-hoc analytics, built own models to provide business insigth
 - **Data Scientist, Engineering, App Dev**: perform statistical analysis and ML training, implement big data analytics to identify trends, solve business problems, optimize performance.
 
+# Data Lake Components
+![](/Images/DataLakeComponents.png)
+
+## Data Ingestion
+Data ingestion is the process of collecting and importing data from various sources into a database or storage system for further processing and analysis. The goal is to clean and store data in a consistent and accessible central repository.
+
+To manage this data is possible also to use tools which do not imply using code.
+
+### No Code tools for data managment
+![](/Images/NoCodeTools.png)
+
+This tools do not neeed to code, instead all the commands are sended by graphical interface.
+
+The best practice for data ingestion are: 
+- Identify the business case
+- Identify the rigth method of ingestion 
+- Consider the streaming and CDC(Change Data Capture) ingestion benefits
+- Focus on the near terms
+- Compress the data before sending them
+- Encrypt the personally identifiable information
+- Reduce the number of files
+- Ensure the exact process
+- Automate the ingestion
+
+# Storage Managment
+The storage is divided into three *Zones*. 
+
+<img src="./Images/Zones.png" width="5000000"/>
+
+- **Raw**: This is the immutable storage, it cannot/should not be changed, it is useful for disaster recovery
+- **Optimized**: as the raw data grow, retrive them directly becomes slower and to gain speed they can be convertend into optimized formats
+- **Analytics**: This are data ready to be used by engineering for BI and Machine-learning goals.
+
+The most used and optimized formats in the open source communiti are:
+![](/Images/Formats.png)
+
+The data should be kept in an homogeneus data format within a block.
+It is possible to apply strategies to compress the data in a block.
+This is why most of the time we focus on columnar storages where the mining is performed on columns to speed up the process. Most of the times the OLTP uses a row-wise format to send the transaction.
+
+# Data Processing and Analytics
+The data analytics is based on three different type of tecnique:
+
+- **Interactive Analytics**: where a lot of data are requested for creating an output.
+- **Big Data Analytics**: Interactive queries to large volumes are also performed here, but the output is Data Aggregation, Data Transformation and Complex Data Analytics
+- **Real-Time Analytics**: Here the goal is to obtain the event detection.
+
+Furthermore is possible to use three differnt architecture for the Data Lake:
+
+### Lambda Architecture
+Here the purpouse is to handle both batch and real-time data processing.
+![](/Images/LambdaLake.png)
+
+### Kappa Architecture
+Here the purpouse is to unify batch and streaming data processing.
+![](/Images/KappaLake.png)
+
+### Delta Architecture
+Simplifies data processing by using a single pipeline for both batch and real-time data.
+![](/Images/DeltaLake.png)
+
+Here we have many advantages and among them:
+- ACID Transaction
+- Scalabe Metadata Handling
+- Data Versioning
+- Unified Batch and Streaming Source and Sink
+- Schema Enforcement
+- Schema Evolution
+
+The metadata are crucial for helping whoever use the data to discover and understand the data effectively. Also they ensure that the data lake remains a valuable resource by organizing and managing catalogs.
+
+The data lake can be seen as the landing zone for all the data. They need to be secured with RBAC.
+
+Data swapping should be avoided in order to maintain the dataset valuable.
+
+
+
