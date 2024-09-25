@@ -156,4 +156,5 @@ The data lake can be seen as the landing zone for all the data. They need to be 
 Data swapping should be avoided in order to maintain the dataset valuable.
 
 
+➡️ [NextPage](/Theory/The%20CRISP%20Methodology.md)
 

@@ -4,4 +4,6 @@ In this repo I will write a short resume of the slides from the course Data Mini
 
 The idea is to divide the course into the theory part and the practice part, the theory part will be simply a collections of notes on the slides, while the second part will be composed by exercises and other useful contents.
 
+➡️ [NextPage](/Theory/Introduction%20To%20Business%20Intelligence.md) 
+
 
