@@ -46,3 +46,5 @@ Compare different choises on a qualitative and quantitative basis based on the c
 ## Deployment
 
 The last phase is the deployment where the result of the DM process are used in software system to obtain some returns of investments
+
+➡️ [NextPage](/Theory/MachineLearning/MachineLearning.md)

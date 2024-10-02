@@ -23,7 +23,7 @@ In particular the Data Mining focuses on a data driven approach.
 
 An other big concept is *Data Science*, it is an umbrella term that include all the skills of someone who manages data and it includes all the above.
 
-![](/Practice/Images/VirtuousLoop.png)
+![](/Theory/Images/VirtuousLoop.png)
 
 ## Tasks in Data Mining
 The possible tasks in data mining are subdivided by the type of output we want to obtain. Data Mining is a process and has different stages, this process can influence the project itself and the software development, creating several good alternatives and well-defined tasks. The need for data from different companies calls for a general knowledge.
