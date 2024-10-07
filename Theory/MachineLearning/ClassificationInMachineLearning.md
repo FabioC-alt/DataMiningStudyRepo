@@ -222,3 +222,20 @@ The DT induction is the process of building a decision tree model from a given d
 - Why the test error can be much greater than the training error
 - Why the pruning can improve the performance
 - How to deal with continuous attributes
+
+# Model Selection
+
+In this section we are going to further explore the available models for classification.
+
+The amount of data in the set is most of the time scarce, because we have to split them among:
+
+- Train
+- Validation
+- Test
+
+Obviously the more data we use, the best performance we should expect.
+
+To avoid the overoptimistic situation we decide a **coincidence interval** to be assigned to the test error.
+
+This most of the time depends from the empirical frequency and are due to noise in the data. 
+

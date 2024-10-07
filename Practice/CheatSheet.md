@@ -73,3 +73,18 @@ print("The accuracy on test set is {0:.1f}%".format(accuracy_test))
 ```
 
 ## Drawing a Tree
+```
+from matplotlib.pyplot import figure
+
+figure(figsize=(25,25))
+tree.plot_tree(model, rounded=True,filled=True,Class_names=['False','True'])
+
+```
+
+This instructions plot the tree.
+The `plot_tree` method takes as input 4 parameters:
+- **model**: is the model used to predict the result
+- **rounded=True**: rounds the box shape
+- **filled=True**: fills the boxes with color
+- **Class_names**: gives a name to the classes, given that the prediction are 1s and 0s, they can be labeled as True and False.
+
