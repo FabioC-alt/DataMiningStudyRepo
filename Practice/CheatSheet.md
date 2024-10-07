@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from sklearn import tree #Classification
+import seaborn as sns
 ```
 
 Files includes
@@ -87,4 +88,36 @@ The `plot_tree` method takes as input 4 parameters:
 - **rounded=True**: rounds the box shape
 - **filled=True**: fills the boxes with color
 - **Class_names**: gives a name to the classes, given that the prediction are 1s and 0s, they can be labeled as True and False.
+
+# Histograms
+```
+# To show all the columns 
+pd.DataFrame.hist(df
+                  , figsize = [10,10]
+                 );
+    
+# To show only the target one
+### adjust the line below
+plt.hist(df[target])
+plt.show()
+
+```
+
+# Pairplot
+
+```
+sns.pairplot(df, hue='quality', diag_kind='kde')
+```
+
+The `hue` parameter is used to add color grouoping to the plot
+
+The `diag_kind` parameters control the type of plot that appears on the diagonal of the pair plot, and `kde` stands for **Kernel Density Estimate** and an alternative is `hist`, to show the histograms instead of KDE plots.
+
+# Correlation 
+```
+corr = df[df.columns].corr() # Deposit all the correlation information
+plt.figure(figsize=(15,10))  # Figsize
+sns.heatmap(corr, cmap='YlGnBu`, annot= true) # Creates the heatmap
+```
+
 
