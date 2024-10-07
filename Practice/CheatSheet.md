@@ -114,7 +114,7 @@ The `hue` parameter is used to add color grouoping to the plot
 The `diag_kind` parameters control the type of plot that appears on the diagonal of the pair plot, and `kde` stands for **Kernel Density Estimate** and an alternative is `hist`, to show the histograms instead of KDE plots.
 
 # Correlation 
-```
+```s
 corr = df[df.columns].corr() # Deposit all the correlation information
 plt.figure(figsize=(15,10))  # Figsize
 sns.heatmap(corr, cmap='YlGnBu`, annot= true) # Creates the heatmap

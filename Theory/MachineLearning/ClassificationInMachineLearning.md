@@ -239,3 +239,103 @@ To avoid the overoptimistic situation we decide a **coincidence interval** to be
 
 This most of the time depends from the empirical frequency and are due to noise in the data. 
 
+Usually noise is assumed to have a normal distribution around the true probability
+
+## Establishing the accurancy of a classifier
+
+The error frequency is the simplest indicator of the quality of a classifier. 
+
+It is to be considered that every machine learning algorithm has one or more parameters that influence its behaviour. These parameters are called *hyperparameters*.
+
+There are two **testing strategies** that are used to get the most out of the supervised data set.
+
+- Holdout
+- Cross Validation
+
+### Holdout
+
+A typical value of the training/test ratio is 2/1 and the split should be as random as possible. 
+The test set is used mostly to obtain an estimation of the performance measures with new data.
+
+### Cross-Validation
+
+The training set is randomly partitioned into $k$ subset. 
+All the subset ecept one are used for training, the last one is used for testing.
+Finally the final model is generated using the *entire training set*, while all the previous results are combined.
+
+#### Bootstrap
+It is a statistical sampling technique, where $N$ records are sampled with **replacement**.
+
+## Performance measures of a classifier
+
+### Binary Prediction
+
+$success rate = accurancy$
+
+$accurancy = {TP+TN}/N_{test}$
+
+- TP: True Positive
+- TN: True Negative
+- $N_{test}$: All the predictions
+The accurancy gives an initial feeling of the effectiveness of the classifier,but can heavily misleading when classes are imbalanced.
+
+Other possible performances measures are:
+
+$Precision$ = $\frac{TP}{(TP+FP)}$
+
+$Recall$ = $\frac{TP}{(TP+FN)}$
+
+$FN$: False Negative
+
+$Specificity$ = $\frac{TN}{(TN+FP)}$
+
+$F1-score$ = $2 \frac{(prec*rec)}{(prec+rec)}$
+
+The F1-score is *always* interesting, because it has higher values when precision and recall are reasonably balanced.
+
+## Confusion Matrix
+The ***confusion matrix*** contains the number of test records of class $i$ and predicted as class $j$, while the diagonal are only the true prediction.
+
+![](/Theory/Images/ConfusionMatrix.png)
+
+## $k$ statistic
+Evaluates the concordance between two classifications. 
+
+$\kappa = \frac{P_o - P_e}{1 - P_e}$
+
+$P_o $ is the probability of concordance
+$P_e $ is the probability of random concordance
+
+![](/Theory/Images/SpectrumofK.png)
+
+## The cost of errors
+Producing errors in predicting classes sometimes may be even more expensive than not producing them, so it is possible to force weigthed errors:
+
+- Alterate the proportion of classes in the supervised data, duplicating the examples for which the classification error is higher
+- Using a learning scheme that allows to add weights to the instances.
+
+# Evaluation of probabilistic classifiers
+
+Sometimes may be useful to predict the probability of a record in all the possible classes (*CRISP*) method instead of the simple prediction. To do so, is possible to use two different tecniques:
+
+- binary
+- multiclass
+
+## Binary
+
+Used to evaluate various scenarios, depending on the application.
+
+![](/Theory/Images/LiftChart.png)
+
+The straigth line plots the number of positives obtained form a random choiche of a sample of test data.
+
+The curve plots the number of positives obtained drawing a fraction of the test data with decreasing probability
+
+The larger the area between the two curves, the best the classification model.
+
+## ROC Curve
+It is the tradeoff between the hit rate and the false alarm in a noisy channel.
+
+![](/Theory/Images/ROCCurve.png)
+
+# Statistical Modeling
