@@ -339,3 +339,177 @@ It is the tradeoff between the hit rate and the false alarm in a noisy channel.
 ![](/Theory/Images/ROCCurve.png)
 
 # Statistical Modeling
+
+Here are presented some of the statistical model based on the Bayes's theorem.
+
+## Bayes' Theorem:
+Naive Bayes is a probabilistic classification algorithm based on Bayes' Theorem. It assumes that the features of the data are independent of each other, which is a "naive" assumption, hence the name. Despite this simplification, Naive Bayes often performs surprisingly well for various types of classification problems.
+
+
+The formula is:
+
+$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$
+
+Where:
+- $P(A|B)$ is the probability of class A given feature B (posterior probability).
+- $P(B|A)$ is the likelihood, or the probability of feature B given class A.
+- $P(A)$ is the prior probability of class A.
+- $P(B)$ is the probability of feature B.
+
+It has a clear semantic for learning probabilistic knowledge and excellent results in many cases.
+
+The biggest criticity of this tecnique are related to the assumption which are simplistic but sometimes they may not be strong enough. 
+When we have missing values is necessary to find a way to solve the holes, a possible solution is to use the smoothing which can reduce the overfit.
+
+If we have numeric values is impossible to apply the method, thus to overcome these problems a gaussian distribution is used. 
+
+
+# Linear Perceptron
+
+A **linear perceptron** is a type of binary classifier that uses a linear decision boundary to classify input data into one of two classes. It is one of the simplest types of neural networks and serves as the building block for more complex models.
+
+## Perceptron Structure:
+- The perceptron takes in multiple input features (e.g., $ x_1, x_2, ..., x_n $) and assigns a weight to each one (e.g., $ w_1, w_2, ..., w_n $).
+- It computes a weighted sum of the input features, plus a bias term $b$, and applies an activation function to determine the output.
+
+## Perceptron Equation:
+The output of a perceptron is determined by the following equation:
+
+$
+y = f(w \cdot x + b)
+$
+
+Where:
+- $ w \cdot x $ is the dot product of the weight vector $ w $ and the input vector $ x $, which results in a scalar value.
+- $ b $ is the bias term, which helps adjust the decision boundary.
+- $ f $ is the activation function, often a step function that outputs either 1 or -1 (or 0, depending on the problem).
+
+## Step Function:
+In binary classification, the activation function is typically a step function:
+
+$
+f(z) =
+\begin{cases} 
+1 & \text{if } z \geq 0 \\
+0 & \text{if } z < 0 
+\end{cases}
+$
+
+Where $ z = w \cdot x + b $.
+
+## Classification Process:
+1. **Input**: The perceptron takes the input vector $x$ (the features of the data).
+2. **Weighted Sum**: It computes the weighted sum of the inputs and adds the bias term.
+3. **Activation**: The step function determines whether the output is 0 or 1 (the class label).
+4. **Classification**: Based on the result of the activation function, the perceptron assigns the input to one of the two classes.
+
+## Training the Perceptron:
+The perceptron uses a simple learning rule to adjust its weights during training, called the **perceptron learning algorithm**:
+- For each training sample, if the perceptron classifies the input incorrectly, the weights are updated using the following rule:
+
+$
+w_i \leftarrow w_i + \Delta w_i
+$
+$
+\Delta w_i = \eta (y_{\text{true}} - y_{\text{pred}}) x_i
+$
+
+Where:
+- $ \eta $ is the learning rate, a small positive constant.
+- $ y_{\text{true}} $ is the actual label of the training sample.
+- $ y_{\text{pred}} $ is the predicted label from the perceptron.
+- $ x_i $ is the input feature corresponding to weight $ w_i $
+
+## Limitations:
+- The perceptron can only classify data that is **linearly separable** (i.e., data that can be separated by a straight line in 2D or a hyperplane in higher dimensions).
+- It cannot solve more complex problems like XOR, which are not linearly separable.
+
+# Support Vector Machines (SVM) for binary classification
+If the data are not linearly separable this means that the boundary between classes is some type of hyper-surface more complex than a hyperplane. One possibility is abandone the linearity, but if we do so the method would soon become intractable and also would be extremely prone to overfitting.
+
+The main ideas are based on the computational learning theory and focuses on *Optimization* rather than greedy search.
+
+The key concepts are:
+- The hyperplane: is the decision boundary that separates the two classes
+- The margin: is the distance between the hyperplane and the closest data points from each class, the goal of the SVM is to maximize this margin. 
+- The support vector: These are the data points that are closest to the hyperplane, they are critical in determining the position and orientation of the hyperplane.
+- The linear SVM: if datas are separated from a straight line, the problem is called linearly separable, if not is called Non-linear SVM.
+
+## COMPLETARE
+
+# Neural Networks
+
+The functioning of the human brain inspired the creation of computer based lookalike structure such as the perceptrons. A neurons is a signal processor wich is triggered each time a threshold is reached, the signal from one neuron to another is **weigthed**, the weigth changes over time, also due to *learning*.
+
+The signals are modeled as real number, the threshold of the biological system is modeled as a mathematic function, in particular the **Sigmoid** function:
+
+![](/Theory/Images/Sigmoid.png)
+
+Most of the result with the linear perceptron were non satisfactory because of the linearity, in addition to the problem of separability.
+
+To imrove the results of the neural network more layer are posed onto each other each of these layers creates a feed to change the networks output.
+
+## Training a neural network
+Training a neural network means to encode the weigths and decide the value of each of them.
+It is also possible to establish the error of each value:
+
+![](/Theory/Images/ErrorInNeural.png)
+
+The learning models of a neural network may be devide into two main groups:
+
+- Stochastic: each forward propagation is immediately followed by a weigth update, this step introduces some noise
+- Batch: before changing a weigths there are many propagations 
+
+The training can be considered complete after many rounds of learning over the entire set(epoch), if the weigths update result in minimal changes.
+
+If the network is too complex, with too many layers there may be overfitting.
+
+A technique used in many machine learning functions to improve the generalisation capabilities of a model is **Regularization**. Regularization corrects the loss function in order to smooth the fitting to the data.
+
+# K Nearest Neigthbours Classifiers
+Keeps all the training data, makes prediction by computing the similarity between the new samples and each training instance. Picks the K entries in the database which are the closest to the new data point.
+
+# Loss function
+The loss function is a mathematical function that quantifies the difference between the predicted values by a model and the actual values. It serves as a measure of how well or poorly a model is performing, guiding the learning process by helping the model minimize the errors during the training.
+
+# The binary classifiers and the Multi-class classification
+When dealing with multi-class classfication we need other methods. There are two ways to deal with multi-class algorithm.
+- Transform the training algorithm and the model
+- Use a set of binary classifiers and combine the result
+
+## OVO Strategy
+In One-vs-One strategy we consider all the possible pairs of classes and generate a binary classifiers for each pair, each binary problem consider only the examples of the two selected classes. During the prediction time a voting scheme is implemented and used to classify the result using the +1. 
+
+## OVR Strategy
+In One-vs-Rest strategy we consider C binary problems where class *c* is a positive example and all the others are negatives.
+At the prediction time a voting scheme is applied. The difference between the two is that the OVR splits the multi-class problem into multiple binary classification problem.
+In the OVO approach the classifiers creates binary classification problems between every possible pair of classes.
+
+While the OVO require solving a higher number of problems the OVR tends to be intrinsically unbalanced.
+
+# Ensable Methods
+Using more tree to obtain the best solution.
+Train a set of **base classifiers** and the final prediction is obtained taking the votes of the base classifiers, the ensable methods tends to perform better than a single classifier. The ensable methods are useful if the base classifiers are independent and the performance of the base classifier is better than random choice.
+
+In ensable methods there are many way to manipulate the data: 
+- Bagging: repeatedly samples with replacements according to a uniform probability distribution
+- Boosting: iteratively changes the distribution of training examples so that the base classifier focus on examples which are hard to classify
+- Adaboost: the importance of each base classifier depends on it error rate 
+
+# Forest of Randomised Tree
+A technique called perturb-and-combine is specifically designed for trees, a diverse set of classifiers is created by introducing randomness in the classifiers construction. The prediction of the ensable is given as the average prediction of the individual classifiers 
+
+## Bias-vs-Variance Tradeoff
+A bias is the simplifying assumption made by the model to make the target function easier to approach.
+Variance is the amount that the estimate of the target function will change, give different training data.
+The Bias-variance Tradeoff is place where our machine model performs between errors introduce by the bias and the variance.
+
+The purpouse of this two elements is to simplify the assumption of the model, but they introduce randomness. To reduce the randomness is possible to use the Random Forest technique, which creates multiple trees and makes possible to obtain more result, but not all the solutions are necessary only the best one is considered.
+
+### Boosting 
+Boosting with ensamble learning is possible by using a different classifier and the weigths are modified iteratively according to classifier performance.
+In particular a machine learning algorithm used for boosting is the **AdaBoosting**(*Adaptive Boosting*).
+Adaboosting is an ensable method that combines several weak classifiers to form a strong one, by focusing more on the misclassified examples in each iteration.
+
+
+
