@@ -10,6 +10,10 @@ The idea is to divide the course into the theory part and the practice part, the
     - [Data Lake](/Theory/Data%20Mining/DataLake.md)
     - [CRISP Methodology](/Theory/Data%20Mining/The%20CRISP%20Methodology.md)
   - [Machine Learning](/Theory/MachineLearning/MachineLearning.md)
+    - [Datas](/Theory/MachineLearning/Datas.md)
+    - [Classification](/Theory/MachineLearning/ClassificationInMachineLearning.md)
+    - [Regression](/Theory/MachineLearning/Regression.md)
+    
 
 ➡️ [NextPage](/Theory/Introduction%20To%20Business%20Intelligence.md) 
 
