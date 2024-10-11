@@ -58,3 +58,17 @@ Some extreme cases may happen anyway:
 
 Most of the times is used to explore data, in a one dimension space and it is a good way to discretize the values of the domain in non-uniform buckets
 
+## Evaluation of a clustering scheme
+The evaluation of a clustering technique is related on the results that it produces. Clustering is not a supervised method.
+
+The main issue are related to the random apparent regularities, finding the optimal number of cluster.
+
+The evaluation criteria are:
+- Cohesion: it means that the proximity of the objects in the same cluster should be high
+- Separation between two clusters
+
+The sum of the proximity (another name for similarity) between the elements of the cluster and the geometric center.
+
+- Centroid: a point in the space whose coordinate are the means of the dataset
+- Medoid: an element of the dataset whose average dissimilarity with all the elements of the cluster is minimal
+
