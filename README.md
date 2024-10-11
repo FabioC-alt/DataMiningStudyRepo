@@ -13,7 +13,11 @@ The idea is to divide the course into the theory part and the practice part, the
     - [Datas](/Theory/MachineLearning/Datas.md)
     - [Classification](/Theory/MachineLearning/ClassificationInMachineLearning.md)
     - [Regression](/Theory/MachineLearning/Regression.md)
+    - [Clustering](/Theory/MachineLearning/Clustering.md)
 - [Laboratories](/Practice/)
+  - [LabIntro](/Practice/Lab1_Intro/)
+  - [Lab2Classification](/Practice/Lab2_Classification/)
+  - [Lab3ModelSelection](/Practice/Lab3_ModelSelection/)
   - [CheatSheet](/Practice/CheatSheet.md)  
 
 ➡️ [NextPage](/Theory/Introduction%20To%20Business%20Intelligence.md) 
