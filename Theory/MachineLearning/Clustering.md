@@ -54,11 +54,11 @@ Some extreme cases may happen anyway:
 - Empty Clusters: if the centroid does not own any point, it is necessary to choose a new centroid
 - Outliers: are points with a high distance to their centroid
 
-## Common use of the K-means
+### Common use of the K-means
 
 Most of the times is used to explore data, in a one dimension space and it is a good way to discretize the values of the domain in non-uniform buckets
 
-## Evaluation of a clustering scheme
+### Evaluation of a clustering scheme
 The evaluation of a clustering technique is related on the results that it produces. Clustering is not a supervised method.
 
 The main issue are related to the random apparent regularities, finding the optimal number of cluster.
@@ -71,4 +71,60 @@ The sum of the proximity (another name for similarity) between the elements of t
 
 - Centroid: a point in the space whose coordinate are the means of the dataset
 - Medoid: an element of the dataset whose average dissimilarity with all the elements of the cluster is minimal
+
+### Silhouette
+A possible index to evaluate the clustering scheme is the Silhouette 
+
+If the silhouette value is positive it means that the values is part of a cluster, instead if not it means that the object is more similar to other cluster's object.
+
+### Choosin the best number of clusters
+Given that some algorithm require to specify the number of cluster as an hyperparameter, for this reason it is necessary to iterate and reiterate the cluster training in order to obtain the best value of K.
+
+### Supervised measure evaluation
+The gold standard refers to a benchmark or a reference point used to evaluate the performance of algorithms or models. 
+In clustering the gold standard migth involve validated relationship or grouping determined througth domain expertise.
+
+## Hierarchical Clustering
+It generates a **nested structure** of clusters which can be of two types:
+- Agglomerative or bottom up
+- Divisive or top down
+
+### Agglomerative
+Every object is a cluster and then we try to find the less separated pair and merge them into a single cluster, in the end the final result is a *dendogram*, a structure which represent the choosen cluster.
+
+The parameter that can be used to discuss on the optimization of this method is the number of cluster that is necessary, based on that is possible to cut the choosen number of cluster.
+
+![](/Theory/Images/ClusterCutting.png)
+
+## Density based clustering
+
+The cluster are caratherized by a high-density region compared to a low-density regions.
+
+To compute the density is possible to use two methods:
+- Grid-based
+- Object-based
+
+### Density Based Spatial Clustering of Application with Noise
+
+The first goal is to start from the p and the q, the border and the core.
+
+![](/Theory/Images/DBSCANStart.png)
+
+After that is possible to define a radius and define the **neigthborhood** of a point.
+
+![](/Theory/Images/DBSCANNeigthborhood.png)
+
+Than it is possible to define a threshold $minPoints$ and define as core a point with at least $minPoints$ points in its neigthborhood.
+
+A cluster is defined as a maximal set of point connected by density
+
+To set the radius and the $minPoints$ is possible to use the *grid search* over several combination of hyperparameters.
+
+## Kernel Based Estimation
+
+Is technique developed in statistics and pattern mining and it describe the distribution of the data by a function, the overall density function is the sum of the **influence function** associated with each point.
+
+This techniques is based upon the *kernel function*, it must be symmetric and monotonically decreasing.
+
+## Model based clustering
 
