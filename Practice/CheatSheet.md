@@ -9,6 +9,7 @@ import numpy as np
 from pathlib import Path
 from sklearn import tree #Classification
 import seaborn as sns
+from sklearn import tree 
 ```
 
 Files includes
@@ -31,7 +32,8 @@ values = pd.read_csv(fileVar)
 
 First is necessary to create the dataset without the class
 ```
-X_train = train.drop(labels=`Class`, axis=1) #Dropping a column using its name or
+target = `ClassName`
+X_train = train.drop(labels=target, axis=1) #Dropping a column using its name or
 X_train = train.drop(train.colums[-1], axis=1) #Dropping a column using its index
 X_train.shape #Always control the shape of the training dataset, it should be one column less
 ```
