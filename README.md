@@ -14,6 +14,7 @@ The idea is to divide the course into the theory part and the practice part, the
     - [Classification](/Theory/MachineLearning/ClassificationInMachineLearning.md)
     - [Regression](/Theory/MachineLearning/Regression.md)
     - [Clustering](/Theory/MachineLearning/Clustering.md)
+    - [AssociationRules](/Theory/MachineLearning/AssociationRules.md)
 - [Laboratories](/Practice/)
   - [LabIntro](/Practice/Lab1_Intro/)
   - [Lab2Classification](/Practice/Lab2_Classification/)
