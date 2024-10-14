@@ -126,5 +126,3 @@ Is technique developed in statistics and pattern mining and it describe the dist
 
 This techniques is based upon the *kernel function*, it must be symmetric and monotonically decreasing.
 
-## Model based clustering
-
